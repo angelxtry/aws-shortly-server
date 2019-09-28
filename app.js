@@ -48,7 +48,7 @@ app.get("/", (req, res) => {
 app.post("/user/signup", async (req, res) => {
   // console.log(req.body);
   // 회원가입이 끝나면 로그인 페이지로 가야한다.
-  const { email, password } = req.body;
+  const { email, password, username } = req.body;
   try {
     const user = await users.findOne({ where: { email } });
     console.log(user);
@@ -58,7 +58,8 @@ app.post("/user/signup", async (req, res) => {
       const encryptPass = await bcrypt.hash(password, 5);
       await users.create({
         email: email,
-        password: encryptPass
+        password: encryptPass,
+        username: username
       });
       res.status(200).send("success.");
     }
