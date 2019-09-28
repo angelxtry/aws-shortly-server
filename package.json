@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/getReview.js && mocha test/index.js --exit --timeout 20000 --exit",
+    "start": "nodemon app.js",
+    "submit-test": "node test/getReview.js && mocha test/index.js --reporter test/reporter.js --exit",
+    "check": "node ../.airci/submit.js",
+    "submit": "npm-run-all -c -s --silent submit-test check"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.1.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "mysql2": "^1.7.0",
+    "request": "^2.88.0",
+    "sequelize": "^4.44.3"
+  }
+}
