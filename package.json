@@ -24,6 +24,6 @@
     "morgan": "^1.9.1",
     "mysql2": "^1.7.0",
     "request": "^2.88.0",
-    "sequelize": "^4.44.3"
+    "sequelize": "^5.15.1"
   }
 }
